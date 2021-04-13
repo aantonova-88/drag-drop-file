@@ -6,7 +6,6 @@ const DropZone = ({ onFileUploaded }) => {
 
   const dragOverHandler = (e) => {
         e.preventDefault();
-
     }
 
   const dragOver = (e) => {
@@ -14,29 +13,28 @@ const DropZone = ({ onFileUploaded }) => {
     }
 
   const readFile = (file) => {
+
       let reader = new FileReader();
 
       reader.readAsText(file);
 
       reader.onload = function() {
         onFileUploaded(reader.result);
-
       };
-
-      reader.onerror = function() {
-        console.log(reader.error);
-      };
-}
+ }
 
 const fileDrop = (e) => {
    e.preventDefault();
    const file = e.dataTransfer.files[0];
-   let newDiv = document.createElement("div");
-   newDiv.innerHTML = file.name;
-   document.body.prepend(newDiv);
-   console.log(file.name);
-   readFile(file);
 
+   if (file.type !== 'application/json') {
+     alert('File type not permitted. Use only json.')
+   } else {
+     let newDiv = document.createElement("div");
+     newDiv.innerHTML = file.name;
+     document.body.prepend(newDiv);
+     readFile(file);
+   }
  };
 
 

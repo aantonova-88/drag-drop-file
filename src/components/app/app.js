@@ -9,12 +9,11 @@ import './app.css';
 export default class App extends Component {
 
   state = {
-    userList: [
-
-    ],
+    userList: [],
     classNameList: 'list-hide',
     classNameDrop: 'content'
   };
+
 
   deleteItem = (id) => {
 
@@ -33,11 +32,9 @@ export default class App extends Component {
     });
   };
 
-
-
   processUploadedFile = (file) => {
     const json = JSON.parse(file);
-    
+
     let userNames = [];
     let classNameNew = 'list';
     let classDrop = 'content-hide';
@@ -75,6 +72,7 @@ export default class App extends Component {
   };
 
   render() {
+
     const { userList, classNameList, classNameDrop } = this.state;
 
     return (

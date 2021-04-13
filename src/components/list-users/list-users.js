@@ -12,7 +12,7 @@ const ListUsers = ({ users, onDeleted }) => {
       } else {
         return 0;
       }
-    });
+ });
 
   const people = elements.map((item) => {
     return (
