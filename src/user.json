@@ -1,0 +1,21 @@
+{
+	"user": "Jay",
+	"comment": "Can anyone think of a short synonym for \"followed by\"?",
+	"replies": [{
+			"user": "Andre",
+			"comment": "And.",
+			"replies": [{
+				"user": "Jay",
+				"comment": "Interesting thought! Will consider that."
+			}]
+		},
+		{
+			"user": "Jay",
+			"comment": "Hello"
+		},
+    {
+			"user": "Ben",
+			"comment": "Hello"
+		}    
+	]
+}

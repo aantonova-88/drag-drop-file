@@ -1,0 +1,23 @@
+.container p {
+    color: red;
+    text-align: center;
+}
+
+.drop-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 800px;
+    height: 200px;
+    border: solid;
+}
+
+
+
+.drop-message {
+    text-align: center;
+
+    font-family: Arial;
+    font-size: 20px;
+}
