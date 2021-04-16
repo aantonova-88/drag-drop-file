@@ -32,6 +32,8 @@ export default class App extends Component {
     });
   };
 
+
+
   processUploadedFile = (file) => {
     const json = JSON.parse(file);
 
@@ -39,19 +41,19 @@ export default class App extends Component {
     let classNameNew = 'list';
     let classDrop = 'content-hide';
 
-    Object.entries(json).forEach(([key, value]) => {
-      if(key === 'user') {
-        userNames.push(value)
-      } else if(key === 'replies') {
-          value.forEach((el) => {
-          Object.entries(el).forEach(([key, value]) => {
-            if(key === 'user') {
-              userNames.push(value)
-            }
+    process = (el) => {
+        Object.entries(el).forEach(([key, value]) => {
+        if(key === 'user') {
+          userNames.push(value)
+        } else if(key === 'replies') {
+            value.forEach((el) => {
+            process(el);
           });
-        });
-      }
-    });
+        }
+      });
+    }
+
+    process(json);
 
     let uniqueNames = Array.from(new Set(userNames));
 
@@ -70,6 +72,8 @@ export default class App extends Component {
       };
     });
   };
+
+
 
   render() {
 
